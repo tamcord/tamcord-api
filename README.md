@@ -1,7 +1,7 @@
 <p align="center">
   <img width="100" src="https://raw.githubusercontent.com/fosscord/fosscord/master/assets/logo_big_transparent.png" />
 </p>
-<h1 align="center">Fosscord Server</h1>
+<h1 align="center">Tamcord</h1>
 
 <p>
   <a href="https://discord.gg/ZrnGQP6p3d">
@@ -18,7 +18,7 @@
 
 This repository contains:
 
--   [Fosscord HTTP API Server](/api)
+-   [Tamcord HTTP API Server](/api)
 -   [WebSocket Gateway Server](/gateway)
 -   [HTTP CDN Server](/cdn)
 -   [Utility and Database Models](/util)
@@ -32,4 +32,4 @@ This repository contains:
 
 ## [Setup](https://docs.fosscord.com/setup/server/)
 
--   [Download](https://github.com/fosscord/fosscord-server/releases)
+-   [Download](https://github.com/tamcord/tamcord/releases)
