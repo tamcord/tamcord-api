@@ -16,7 +16,7 @@
 
 ## [About](https://github.com/fosscord/fosscord-server/wiki)
 
-This repository contains the Fosscord HTTP API Server
+This repository contains the Tamcord HTTP API Server
 
 ## Bug Tracker
 
@@ -43,8 +43,8 @@ and the other technologies we use
 Clone the Repository:
 
 ```bash
-git clone https://github.com/fosscord/fosscord-server
-cd fosscord-server
+git clone https://github.com/tamcord/tamcord-api
+cd tamcord-api
 ```
 
 #### Install (dev)dependencies:
