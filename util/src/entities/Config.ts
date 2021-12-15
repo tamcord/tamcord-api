@@ -49,13 +49,6 @@ export interface ConfigValue {
 		endpointPrivate: string | null;
 	};
 	general: {
-		instanceName: string;
-		instanceDescription: string | null;
-		frontPage: string | null;
-		tosPage: string | null;
-		correspondenceEmail: string | null;
-		correspondenceUserID: string | null;
-		image: string | null;
 		instanceId: string;
 	};
 	limits: {
@@ -187,13 +180,6 @@ export const DefaultConfigOptions: ConfigValue = {
 		endpointPublic: null,
 	},
 	general: {
-		instanceName: "Fosscord Instance",
-		instanceDescription: "This is a Fosscord instance made in pre-relase days",
-		frontPage: null,
-		tosPage: null,
-		correspondenceEmail: "noreply@localhost.local",
-		correspondenceUserID: null,
-		image: null,
 		instanceId: Snowflake.generate(),
 	},
 	limits: {

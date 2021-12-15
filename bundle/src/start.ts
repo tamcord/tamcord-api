@@ -38,12 +38,11 @@ if (cluster.isMaster) {
 			})`
 		)}
 
-Commit Hash: ${
+Current commit: ${
 			commit !== null
 				? `${cyan(commit)} (${yellow(commit.slice(0, 7))})`
 				: "Unknown (Git cannot be found)"
 		}
-Cores: ${cyan(cores)}
 `)
 	);
 
@@ -66,7 +65,7 @@ Cores: ${cyan(cores)}
 			let delay = process.env.DATABASE?.includes("://") ? 0 : i * 1000;
 			setTimeout(() => {
 				cluster.fork();
-				console.log(`[Process] worker ${cyan(i)} started.`);
+				console.log(`[Process] worker ${i} started.`);
 			}, delay);
 		}
 
@@ -81,7 +80,7 @@ Cores: ${cyan(cores)}
 		cluster.on("exit", (worker: any, code: any, signal: any) => {
 			console.log(
 				`[Worker] ${red(
-					`died with PID: ${worker.process.pid} , restarting ...`
+					`died with pid: ${worker.process.pid} , restarting ...`
 				)}`
 			);
 			cluster.fork();

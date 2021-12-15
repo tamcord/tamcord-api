@@ -23,26 +23,9 @@ export default function TestClient(app: Application) {
 	if (GATEWAY_ENDPOINT) {
 		html = html.replace(/GATEWAY_ENDPOINT: .+/, `GATEWAY_ENDPOINT: \`${GATEWAY_ENDPOINT}\`,`);
 	}
-	// inline plugins
-	var files = fs.readdirSync(path.join(__dirname, "..", "..", "assets", "preload-plugins"));
-	var plugins = "";
-	files.forEach(x =>{if(x.endsWith(".js")) plugins += `<script>${fs.readFileSync(path.join(__dirname, "..", "..", "assets", "preload-plugins", x))}</script>\n`; });
-	html = html.replaceAll("<!-- preload plugin marker -->", plugins);
-
-	// plugins
-	files = fs.readdirSync(path.join(__dirname, "..", "..", "assets", "plugins"));
-	plugins = "";
-	files.forEach(x =>{if(x.endsWith(".js")) plugins += `<script src='/assets/plugins/${x}'></script>\n`; });
-	html = html.replaceAll("<!-- plugin marker -->", plugins);
-	//preload plugins
-	files = fs.readdirSync(path.join(__dirname, "..", "..", "assets", "preload-plugins"));
-	plugins = "";
-	files.forEach(x =>{if(x.endsWith(".js")) plugins += `<script>${fs.readFileSync(path.join(__dirname, "..", "..", "assets", "preload-plugins", x))}</script>\n`; });
-	html = html.replaceAll("<!-- preload plugin marker -->", plugins);
-
 
 	app.use("/assets", express.static(path.join(__dirname, "..", "..", "assets")));
-	
+
 	app.get("/assets/:file", async (req: Request, res: Response) => {
 		delete req.headers.host;
 		var response: FetchResponse;
@@ -87,7 +70,6 @@ export default function TestClient(app: Application) {
 		res.set("Cache-Control", "public, max-age=" + 60 * 60 * 24);
 		res.set("content-type", "text/html");
 
-    if(req.url.startsWith("/api")) return;
 		if (req.url.startsWith("/invite")) return res.send(html.replace("9b2b7f0632acd0c5e781", "9f24f709a3de09b67c49"));
 
 		res.send(html);

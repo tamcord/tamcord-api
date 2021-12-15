@@ -41,7 +41,6 @@ export const IdentifySchema = {
 		$highest_last_message_id: String,
 		$read_state_version: Number,
 		$user_guild_settings_version: Number,
-		$user_settings_version: undefined,
 	},
 	$v: Number,
 	$version: Number,
@@ -83,7 +82,6 @@ export interface IdentifySchema {
 		highest_last_message_id?: string;
 		read_state_version?: number;
 		user_guild_settings_version?: number;
-		user_settings_version?: number;
 	};
 	v?: number;
 }

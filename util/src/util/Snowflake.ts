@@ -21,7 +21,7 @@ export class Snowflake {
 	}
 
 	/**
-	 * A Twitter-like snowflake, except the epoch is 2015-01-01T00:00:00.000Z
+	 * A Twitter snowflake, except the epoch is 2015-01-01T00:00:00.000Z
 	 * ```
 	 * If we have a snowflake '266241948824764416' we can represent it as binary:
 	 *
@@ -83,17 +83,14 @@ export class Snowflake {
 		return dec;
 	}
 
-	static generateWorkerProcess() { // worker process - returns a number
+	static generate() {
 		var time = BigInt(Date.now() - Snowflake.EPOCH) << BigInt(22);
 		var worker = Snowflake.workerId << 17n;
 		var process = Snowflake.processId << 12n;
 		var increment = Snowflake.INCREMENT++;
-		return BigInt(time | worker | process | increment);
+		return (time | worker | process | increment).toString();
 	}
-	
-	static generate() {
-		return Snowflake.generateWorkerProcess().toString();
-	}
+
 	/**
 	 * A deconstructed snowflake.
 	 * @typedef {Object} DeconstructedSnowflake
