@@ -29,7 +29,7 @@
 		"@fosscord/util": "file:../util",
 		"amqplib": "^0.8.0",
 		"dotenv": "^8.2.0",
-		"jsonwebtoken": "^8.5.1",
+		"jsonwebtoken": "^9.0.0",
 		"lambert-server": "^1.2.11",
 		"missing-native-js-functions": "^1.2.18",
 		"node-fetch": "^2.6.1",
