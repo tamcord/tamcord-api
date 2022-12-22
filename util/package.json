@@ -41,7 +41,7 @@
 		"amqplib": "^0.8.0",
 		"better-sqlite3": "^7.4.3",
 		"form-data": "^4.0.0",
-		"jsonwebtoken": "^8.5.1",
+		"jsonwebtoken": "^9.0.0",
 		"lambert-server": "^1.2.12",
 		"missing-native-js-functions": "^1.2.18",
 		"multer": "^1.4.3",
